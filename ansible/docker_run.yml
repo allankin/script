@@ -1,0 +1,12 @@
+---
+- hosts: cluster1
+  tasks:
+  - name: app_java-web container
+    docker: 
+      name: app_java-web
+      image: 192.168.1.50:5000/app_java-web
+      state: started
+      pull: always
+      expose: 
+        - port: 8080
+    
