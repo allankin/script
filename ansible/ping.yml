@@ -1,0 +1,7 @@
+---
+- hosts: cluster1
+  remote_user: kim
+  tasks:
+   - name: test connection
+     ping:
+     #remote_user: kim
