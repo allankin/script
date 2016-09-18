@@ -7,6 +7,7 @@ fi
 if docker ps -a | grep none; then
 	docker rmi -f  $(docker images|grep none|awk '{print $3}')
 fi
-docker pull my-registry:5000/app_java-web
-docker run --name $APP_NAME -p 3000:8080 -d my-registry:5000/app_java-web
+docker login   -u kim -p 12345  my-registry:5043
+docker pull my-registry:5043/app_java-web
+docker run --name $APP_NAME -p 3000:8080 -d my-registry:5043/app_java-web
 unset APP_NAME
